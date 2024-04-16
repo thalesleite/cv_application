@@ -5,9 +5,14 @@ body {
   margin: 0;
 }
 
-.header {
+.main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 15px 0 15px 0;
+
+  section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 }
