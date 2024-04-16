@@ -9,10 +9,73 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  width: 80%;
 
   section {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     width: 100%;
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ccc;
+
+      button {
+        margin: 5px;
+        height: 30px;
+        width: 90px;
+        text-transform: uppercase;
+      }
+
+      .form-input {
+        margin: 10px;
+        input {
+          height: 20px;
+          width: 200px;
+        }
+      }
+
+      .align-right {
+        align-self: end;
+      }
+
+      .btn-green {
+        cursor: pointer;
+        border: 2px solid #478647;
+        color: #478647;
+      }
+
+      .btn-green:hover {
+        border: 2px solid #000;
+        color: #000;
+        background-color: #7fc87f;
+      }
+
+      .btn-blue {
+        cursor: pointer;
+        border: 2px solid #172dd0;
+        color: #172dd0;
+      }
+
+      .btn-blue:hover {
+        border: 2px solid #000;
+        color: #000;
+        background-color: #5b96d5;
+      }
+
+      .error {
+        color: red;
+      }
+    }
   }
 }
