@@ -14,7 +14,7 @@ export default function GeneralInfo() {
       isTextValueEmpty(email) ||
       isTextValueEmpty(phone)
     ) {
-      setErrorMessage("Please, fill up all the form!")
+      setErrorMessage("Please, fill up all the fields!")
     } else {
       setErrorMessage("")
       setDisabled(true)
