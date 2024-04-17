@@ -2,13 +2,15 @@ import { useState } from "react"
 import "../styles/GeneralInfo.css"
 
 export default function GeneralInfo() {
-  const [disabled, setDisabled] = useState(false)
+  const [hidden, setHidden] = useState(false)
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
   const [errorMessage, setErrorMessage] = useState("")
 
-  function save() {
+  function save(e) {
+    e.preventDefault()
+
     if (
       isTextValueEmpty(name) ||
       isTextValueEmpty(email) ||
@@ -17,12 +19,13 @@ export default function GeneralInfo() {
       setErrorMessage("Please, fill up all the fields!")
     } else {
       setErrorMessage("")
-      setDisabled(true)
+      setHidden(true)
     }
   }
 
-  function edit() {
-    setDisabled(false)
+  function edit(e) {
+    e.preventDefault()
+    setHidden(false)
   }
 
   function isTextValueEmpty(value) {
@@ -43,10 +46,9 @@ export default function GeneralInfo() {
             id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            disabled={disabled}
-            hidden={disabled}
+            hidden={hidden}
           />
-          <label className="form-label" hidden={!disabled}>
+          <label className="form-label" hidden={!hidden}>
             {name}
           </label>
         </div>
@@ -60,10 +62,9 @@ export default function GeneralInfo() {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            disabled={disabled}
-            hidden={disabled}
+            hidden={hidden}
           />
-          <label className="form-label" hidden={!disabled}>
+          <label className="form-label" hidden={!hidden}>
             {email}
           </label>
         </div>
@@ -77,10 +78,9 @@ export default function GeneralInfo() {
             id="phone"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            disabled={disabled}
-            hidden={disabled}
+            hidden={hidden}
           />
-          <label className="form-label" hidden={!disabled}>
+          <label className="form-label" hidden={!hidden}>
             {phone}
           </label>
         </div>
@@ -89,7 +89,12 @@ export default function GeneralInfo() {
           <button onClick={edit} className="btn-blue">
             Edit
           </button>
-          <button onClick={save} hidden={disabled} className="btn-green">
+          <button
+            type="submit"
+            onClick={save}
+            hidden={hidden}
+            className="btn-green"
+          >
             Save
           </button>
         </div>

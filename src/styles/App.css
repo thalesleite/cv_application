@@ -37,6 +37,17 @@ body {
         text-transform: uppercase;
       }
 
+      select {
+        margin: 5px;
+        height: 25px;
+        width: 150px;
+        text-transform: uppercase;
+      }
+
+      textarea {
+        display: flex;
+      }
+
       .form-input {
         margin: 10px;
         input {
@@ -75,6 +86,10 @@ body {
 
       .error {
         color: red;
+      }
+
+      .hidden {
+        display: none;
       }
     }
   }
